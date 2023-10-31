@@ -34,7 +34,7 @@ app.use(function(req, res, next) {
 
 //connect to the MongoDB using Mongoose ODM
 mongoose.connect (
-  process.env.DBHOST,  { useUnifiedTopology: true, useNewUrlParser: true }
+  process.env.MONGO_DD,  { useUnifiedTopology: true, useNewUrlParser: true }
 ).catch(error => console.log("Error connecting to MongoDB: " + error));
 
 mongoose.connection.once('open', () => console.log('Connected succesfully to MongoDB'));
@@ -42,7 +42,7 @@ mongoose.connection.once('open', () => console.log('Connected succesfully to Mon
 //routes definition
 //Welcome route
 app.get("/api/welcome", (req,res) => {
-  res.status(200).send({message: "Welcome to the MEN-REST-API"});
+  res.status(200).send({message: "Welcome to my World"});
 }); 
 
 // authentication routes to secure the API endpoints
